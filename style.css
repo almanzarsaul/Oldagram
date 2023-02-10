@@ -29,6 +29,15 @@ header {
     height: 34px;
 }
 
+#feed {
+    background-color: #EDEDED;
+}
+
+.post {
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
 .post-container {
     padding: 0 10px;
 }

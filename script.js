@@ -45,7 +45,8 @@ function renderFeed() {
 
 function like(id) {
   posts[id].likes++;
-  renderFeed();
+  const likesHTML = document.getElementById(id + "-likes");
+  likesHTML.textContent = `${posts[id].likes} likes`;
 }
 
 function generatePostHTML(
@@ -78,7 +79,7 @@ function generatePostHTML(
           <button class="interaction-btn""><img src="images/icon-comment.png" alt="Comment button." class="interaction-icon"/></button>
           <button class="interaction-btn""><img src="images/icon-dm.png" alt="Direct message button." class="interaction-icon" /></button>
         </section>
-        <p class="post-likes">${likes} likes</p>
+        <p class="post-likes" id="${id}-likes">${likes} likes</p>
         <p class="post-message"><span class="username">${username}</span> ${comment}</p>
       </div>
       </article>`;

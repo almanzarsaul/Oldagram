@@ -36,6 +36,7 @@ header {
 .post {
     background-color: #fff;
     margin-bottom: 20px;
+    padding-bottom: 16px;
 }
 
 .post-container {
@@ -72,4 +73,18 @@ header {
 .post-likes,
 .username {
     font-weight: 700;
+}
+
+.interaction-btn {
+    border: none;
+    background: none;
+}
+
+.interaction-btn:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
+
+.interaction-icon {
+    width: 22px;
 }

@@ -30,23 +30,28 @@ const posts = [
 ];
 
 const feed = document.getElementById("feed");
-let postsHTML = "";
 
-posts.forEach((post) => {
-  postsHTML += generatePostHTML(post);
-});
+renderFeed();
 
-feed.innerHTML = postsHTML;
+function renderFeed() {
+  let postsHTML = "";
 
-function generatePostHTML({
-  avatar,
-  name,
-  location,
-  post,
-  likes,
-  username,
-  comment,
-}) {
+  posts.forEach((post, index) => {
+    postsHTML += generatePostHTML(index, post);
+  });
+
+  feed.innerHTML = postsHTML;
+}
+
+function like(id) {
+  posts[id].likes++;
+  renderFeed();
+}
+
+function generatePostHTML(
+  id,
+  { avatar, name, location, post, likes, username, comment }
+) {
   return `<article class="post">
       <div class="post-container">
         <section class="user-bar">
@@ -65,12 +70,13 @@ function generatePostHTML({
         src="${post}"
         alt="Portrait drawn by ${name}"
         class="post-img"
+        ondblclick="like(${id})"
       />
       <div class="post-container">
         <section class="interaction-bar">
-          <img src="images/icon-heart.png" alt="Like button." />
-          <img src="images/icon-comment.png" alt="Comment button." />
-          <img src="images/icon-dm.png" alt="Direct message button." />
+          <button class="interaction-btn"" onClick="like(${id})"><img src="images/icon-heart.png" alt="Like button." class="interaction-icon" /></button>
+          <button class="interaction-btn""><img src="images/icon-comment.png" alt="Comment button." class="interaction-icon"/></button>
+          <button class="interaction-btn""><img src="images/icon-dm.png" alt="Direct message button." class="interaction-icon" /></button>
         </section>
         <p class="post-likes">${likes} likes</p>
         <p class="post-message"><span class="username">${username}</span> ${comment}</p>

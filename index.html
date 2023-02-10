@@ -14,11 +14,46 @@
     />
   </head>
   <body>
-    <header>
-      <img src="images/logo.png" alt="Oldagram logo." class="logo" />
-      <img src="images/user-avatar.png" alt="User avatar." class="avatar" />
-    </header>
-    <main></main>
+    <div class="container">
+      <header>
+        <img src="images/logo.png" alt="Oldagram logo." class="logo" />
+        <img src="images/user-avatar.png" alt="User avatar." class="avatar" />
+      </header>
+      <main>
+        <article class="post">
+          <div class="post-container">
+            <section class="user-bar">
+              <img
+                src="images/avatar-vangogh.jpg"
+                alt="Avatar of Vincent van Gogh"
+                class="avatar"
+              />
+              <div class="user-info">
+                <p class="fullname">Vincent van Gogh</p>
+                <p class="location">Zudert, Netherlands</p>
+              </div>
+            </section>
+          </div>
+          <img
+            src="images/post-vangogh.jpg"
+            alt="Portrait drawn by Vincent van Gogh."
+            class="post-img"
+          />
+          <div class="post-container">
+            <section class="interaction-bar">
+              <img src="images/icon-heart.png" alt="Like button." />
+              <img src="images/icon-comment.png" alt="Comment button." />
+              <img src="images/icon-dm.png" alt="Direct message button." />
+            </section>
+            <p class="post-likes">21,492 likes</p>
+            <p class="post-message">
+              <span class="username">vincey1853</span> just took a few mushrooms
+              lol
+            </p>
+          </div>
+        </article>
+      </main>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
